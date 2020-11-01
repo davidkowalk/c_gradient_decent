@@ -3,13 +3,13 @@ Provides a library to do gradient descent regression in c.
 */
 
 
+// 2-Dimensional double
 double two_d_derive_double(double (*f)(double), double x, double dx) {
   return (f(x+dx)-f(x))/dx;
 }
 
-// 2-Dimensional double
-double two_d_double_gradient_descend(double (*function)(double), double start, double precision, double gamma, int max_iterations, double dx,
-                    double *data_x, double *data_y, double *data_step, int *iterations) {
+double two_d_double_gradient_descend(double (*function)(double), double start, double precision, double gamma, unsigned int max_iterations, double dx,
+                    double *data_x, double *data_y, double *data_step, unsigned int *iterations) {
 
 
   //set up next and current x for loop
@@ -37,4 +37,17 @@ double two_d_double_gradient_descend(double (*function)(double), double start, d
 
   }
 
+}
+
+
+// N-Dimensional
+
+void get_gradient_double(double (*f)(double*), double *x, double dx, double *gradient, unsigned int len) {
+  double df;
+  for (unsigned int i = 0; i<len; i++) {
+    df = f(x[i]+dx)-f(x[i]);
+    gradiend[i] = df/dx;
+  }
+
+  return;
 }

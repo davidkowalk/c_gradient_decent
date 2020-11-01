@@ -20,17 +20,19 @@ void print_double_array(double *array, unsigned int len) {
 
 int main() {
   printf("Started...\n");
+
+  //Setup
   double start = 0;
   double precision = 0.001;
   double gamma = 0.2;
   double dx = 0.00001; //dx for derivative
 
-  int max_iters = 20;
+  unsigned int max_iters = 20;
 
   double data_x[max_iters]; //data to be saved
   double data_y[max_iters];
   double data_s[max_iters];
-  int iterations;
+  unsigned int iterations;
 
   printf("Getting lowest Point...\n");
   double x = two_d_double_gradient_descend(
