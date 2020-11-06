@@ -67,7 +67,7 @@ void gradient_descent_double(double (*f)(double*), unsigned int dimensions, doub
   double last_x[dimensions];
 
   double x[dimensions];
-  copy_double_vec(start, current_x); //cp start to current_x
+  copy_double_vec(start, x, dimensions); //cp start to current_x
 
   double step;
 
@@ -75,23 +75,23 @@ void gradient_descent_double(double (*f)(double*), unsigned int dimensions, doub
   double gradient_buffer[dimensions];
 
 
-  for(int i = 0; i<max_iterations; i++) {
+  for(unsigned int i = 0; i<max_iterations; i++) {
 
-    copy_double_vec(x, last_x); //save to old to calc step
+    copy_double_vec(x, last_x, dimensions); //save to old to calc step
 
     //next_x = current_x - gamma * two_d_derive_double(function, current_x, dx);
     //b = a - g*∇f(a)
-    copy_double_vec(x, buffer_x);
+    copy_double_vec(x, buffer_x, dimensions);
     get_gradient_double(f, x, dx, gradient_buffer, dimensions); //Writes gradient of f(x) to gradient_buffer
     scale_vec_double(gamma, gradient_buffer, dimensions); //g*nf
 
-    subtract_vec_double(x, gradient_buffer);
+    subtract_vec_double(x, gradient_buffer, dimensions);
 
     step = get_distance(x, last_x, dimensions);
 
     if(step*step <= precision*precision) {
       *iterations = i;
-      copy_double_vec(x, output); //return x
+      copy_double_vec(x, output, dimensions); //return x
       return;
     }
   }
