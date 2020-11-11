@@ -33,6 +33,7 @@ double two_d_double_gradient_descend(double (*function)(double), double start, d
     data_step[i] = step;
 
     *iterations = i;
+
     if(step*step <= precision*precision) {
       return next_x;
     }
@@ -89,11 +90,11 @@ void gradient_descent_double(double (*f)(double*), unsigned int dimensions, doub
 
     step = get_distance(x, last_x, dimensions);
     printf("Step:\t%f\n", step);
+
     *iterations = i;
 
     if(step*step <= precision*precision) {
       return;
     }
   }
-
 }
