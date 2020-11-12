@@ -21,7 +21,7 @@ Inputs:
 
 |        Argument       |        Type       | Description
 |-----------------------|-------------------|------------
-| **function(double)**  | double *function  | Pointer to the processed function of type double. Takes a single double.
+| **function(double)**  | double \*function  | Pointer to the processed function of type double. Takes a single double.
 | **start**             | double            | Starting point of gradient descent.
 | **precision**         | double            | Step size at which the gradient descent will be terminated.
 | **gamma**             | double            | Conversion rate between derivative and step size.
@@ -30,7 +30,7 @@ Inputs:
 | **data_x**            | double *          | Array to store x-values in. Must be of length max_iterations.
 | **data_y**            | double *          | Array to store y-values in. Must be of length max_iterations.
 | **data_step**         | double *          | Array to store step-values in. Must be of length max_iterations.
-| **max_iterations**    | double *          | Pointer to variable storing the iterations actually executed.
+| **iterations**        | double *          | Pointer to variable storing the iterations actually executed.
 
 **Example:**
 ```c
@@ -73,7 +73,7 @@ Calculates approximate derivative (numerical) between `x` and `x+dx`. Called on 
 
 |        Argument       |        Type       | Description
 |-----------------------|-------------------|------------
-| **function(double)**  | double *function  | Pointer to the processed function of type double. Takes a single double.
+| **function(double)**  | double \*function  | Pointer to the processed function of type double. Takes a single double.
 | x                     | double            | X-position at which to calculate the derivative
 | dx                    | double            | Step size used to get the slope.
 
@@ -106,15 +106,15 @@ Finds minimum in function with n-dimensional inputs.
 
 |        Argument       |        Type       | Description
 |-----------------------|-------------------|------------
-| **function( *double)**| double *function  | Pointer to the processed function of type double. Takes a double-array.
+| **function( \*double)**| double \*function  | Pointer to the processed function of type double. Takes a double-array.
 | **dimensions**        | unsigned int      | Number of dimensions in input vector -> Length of input-array.
 | **start**             | double *          | Starting point of gradient descent. Array mus be of length dimensions
 | **precision**         | double            | Step size at which the gradient descent will be terminated.
 | **gamma**             | double            | Conversion rate between derivative and step size.
 | **max_iterations**    | unsigned int      | Maximum numbers of iterations before forcefull termination.
 | **dx**                | double            | Step size in numerical derivation.
-| double *output        | double *          | Will containt resting point after gradient descent.
-| **max_iterations**    | double *          | Pointer to variable storing the iterations actually executed.
+| double * output       | double *          | Will containt resting point after gradient descent.
+| **iterations**        | double *          | Pointer to variable storing the iterations actually executed.
 
 Example:
 ```c
@@ -160,7 +160,7 @@ Calculates the gradient of a function at the point x.
 
 |        Argument       |        Type       | Description
 |-----------------------|-------------------|------------
-| **function( *double)**| double *function  | Pointer to the processed function of type double. Takes a double-array.
+| **function( \*double)**| double * function  | Pointer to the processed function of type double. Takes a double-array.
 | **x**                 | double *          | Position at which the gradient is calculated.
 | **dx**                | double            | Step size for derivative.
 | **gradient**          | double *          | Output array for the gradient. Must be of size dimensions
