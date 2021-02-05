@@ -15,3 +15,5 @@ To install this api in your project copy the following files into your workspace
 - vector_math.c
 
 Please note that gradient_descent.c will try to include vector_math.c regardless of whether or not it's functions are already defined.
+
+[<img src="https://img.buymeacoffee.com/button-api/?text=Buy me food&emoji=🍕&slug=davidkowalk&button_colour=FF5F5F&font_colour=ffffff&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00">](https://www.buymeacoffee.com/davidkowalk)
