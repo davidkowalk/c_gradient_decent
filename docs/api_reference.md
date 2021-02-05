@@ -1,6 +1,6 @@
 # API Reference: Gradient Descent in C
 
-This API provides you with multiple tools to find a local minimum in any function.
+This API provides you with multiple tools to find a local extreme in any function.
 
 ---
 ## gradient_descent.c
@@ -9,13 +9,13 @@ Calculates derivatives and runs basic gradient descent. Requires `vector_math.c`
 
 ### 2-Dimensional
 
-The 2-dimensional functions assume a function that takes a single double-input and output a single double input.
+The 2-dimensional functions assume a function that takes a single double-input and output a single double value.
 
 #### two_d_double_gradient_descend()
 
-Finds a local minimum in a function from a starting point
+Finds a local extreme in a function from a starting point
 
-**Returns:** *double* - x value where y is minimal.
+**Returns:** *double* - x value where y is extreme.
 
 Inputs:
 
@@ -100,7 +100,7 @@ The n-dimensional functions assume a function that takes an array (vector) of do
 
 #### gradient_descent_double()
 
-Finds minimum in function with n-dimensional inputs.
+Finds extreme in function with n-dimensional inputs.
 
 **Returns**: void
 
