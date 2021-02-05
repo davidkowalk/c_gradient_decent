@@ -24,7 +24,7 @@ Inputs:
 | **function(double)**  | double \*function  | Pointer to the processed function of type double. Takes a single double.
 | **start**             | double            | Starting point of gradient descent.
 | **precision**         | double            | Step size at which the gradient descent will be terminated.
-| **gamma**             | double            | Conversion rate between derivative and step size.
+| **gamma**             | double            | Conversion rate between derivative and step size. Set this to a negative value to find the maximum value.
 | **max_iterations**    | unsigned int      | Maximum numbers of iterations before forcefull termination.
 | **dx**                | double            | Step size in numerical derivation: df/dx = (f(x+dx)-f(x))/dx
 | **data_x**            | double *          | Array to store x-values in. Must be of length max_iterations.
@@ -110,7 +110,7 @@ Finds minimum in function with n-dimensional inputs.
 | **dimensions**        | unsigned int      | Number of dimensions in input vector -> Length of input-array.
 | **start**             | double *          | Starting point of gradient descent. Array mus be of length dimensions
 | **precision**         | double            | Step size at which the gradient descent will be terminated.
-| **gamma**             | double            | Conversion rate between derivative and step size.
+| **gamma**             | double            | Conversion rate between derivative and step size. Set this to a negative value to find the maximum value
 | **max_iterations**    | unsigned int      | Maximum numbers of iterations before forcefull termination.
 | **dx**                | double            | Step size in numerical derivation.
 | double * output       | double *          | Will containt resting point after gradient descent.
